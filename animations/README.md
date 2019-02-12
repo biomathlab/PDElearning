@@ -1,3 +1,3 @@
-This folder contains animations of the finite difference, spline, bi-spline, and neural network surface fitting methods applied to the advection diffusion, Fisher-KPP, and nonlinear Fisher-KPP equations at each noise level.
+This folder contains animations of the finite difference, bi-spline, and neural network surface fitting methods applied to the advection diffusion, Fisher-KPP, and nonlinear Fisher-KPP equations at each noise level.
 Each file contains the name of the data set (e.g. fisher_nonlin which corresponds to the nonlinear Fisher-KPP data), followed by the noise level (e.g. 05 which corresponds to $\beta = 0.05$ in equation (1.3)), and the method (e.g. nn which corresponds to the neural network).
 There are also three additional examples (i.e. sigmoid_example_1.gif, sigmoid_example_2.gif, sigmoid_example_3.gif) which illustrate how using sigmoidal activation functions in the neural network produce unwanted oscillations in the derivative terms.
