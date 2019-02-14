@@ -10,3 +10,5 @@ by running "Properror analyze results.ipynb". In the third cell here, the variab
 model will be used. 
 
 To perform the inverse problem methodology discussed in Section 3(e) of our study, run the file "nonlin_fisher_IP.ipynb".
+
+The file "Properror analyze results_spline_compare.ipynb" plots the results for comparing 1d- and bispline computations with PDE-FIND, as demonstrated in the supplementary material.
