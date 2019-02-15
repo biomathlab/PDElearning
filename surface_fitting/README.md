@@ -13,3 +13,5 @@ make_rmse_tables.py - To compare the different methods, this code computes relat
 make_animations.py - To make animations, this code saves a number of plots in the animations folder and combines them into a .gif file. The plots are deleted after the .gif file is complete.
 
 generate_advection_diffusion_data.py, generate_fisher_data.py, generate_fisher_nonlin_data.py  - code to add proportional error to precomputed noiseless datasets and save the noisy versions in the data folder.
+
+Note: The directory PDElearning/surface_fitting/data/ contains the same data as PDElearning/PDEFIND/Data/
