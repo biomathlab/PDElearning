@@ -1,5 +1,5 @@
 # PDElearning
-Code repository for the paper "Learning partial differential equations for biological transport models from noisy spatiotemporal data"
+Code repository for the paper "Learning partial differential equations for biological transport models from noisy spatiotemporal data". See https://arxiv.org/abs/1902.04733
 
 data_denoising/ - This folder contains the code that denoise data and approximate their partial derivatives with various methods.
 
