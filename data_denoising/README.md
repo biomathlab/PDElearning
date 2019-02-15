@@ -1,4 +1,4 @@
-This folder contains the methods that denoise data and approximate their partial derivatives. 
+This folder contains the code that denoise data and approximate their partial derivatives with various methods.
 
 DEMO.py - contains the code to train a new surface fitting artificial neural network (ANN) or make predictions using the ANN, finite difference, spline, or bi-spline methods. All ANN parameters are stored in the checkpoints folder. All predictions are automatically stored in the data folder. 
 
