@@ -1,1 +1,1 @@
-Here contains the data for PDE-FIND
+This directory contains the data for PDE-FIND
