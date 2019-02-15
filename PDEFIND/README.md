@@ -1,4 +1,4 @@
-This file contains the code to perform the PDE learning aspect of our study.
+This folder contains the code to perform the PDE learning aspect of our study.
 
 PDE_find_properror_sf_pruning.ipynb - ipython notebook to run PDE-FIND implementations. In the second cell, the variable "comp_str"specifies which denoising strategy one wishes to use (nn, finite_differences, or splines) and the variable "model_str" specifies which model one wants to consider (diffadv, fisher, fisher_nonlin). The third cell then updates other various aspects of the study, as detailed throughout the paper.
 
