@@ -5,6 +5,6 @@ data_denoising/ - This folder contains the code that denoise data and approximat
 
 PDEFIND/ - This folder contains the code to perform the PDE learning aspect of our study.
 
-animations/ - This folder contains movies (animations) of showing results of the finite difference, bi-spline, and neural network surface fitting methods applied to the advection diffusion, Fisher-KPP, and nonlinear Fisher-KPP equations.
+animations/ - This folder contains movies (animations) showing results of the finite difference, bi-spline, and neural network data denoising methods applied to the advection diffusion, Fisher-KPP, and nonlinear Fisher-KPP equations.
 
 
