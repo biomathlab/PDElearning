@@ -4,7 +4,7 @@ import scipy.sparse as sparse
 from scipy.sparse import csc_matrix
 from scipy.sparse import dia_matrix
 import itertools
-import operator
+import operator, pdb
 import math
 from tqdm import tqdm
 
@@ -284,6 +284,20 @@ def print_pde(w, rhs_description, ut = 'u_t',n=5,imag_print = 0):
             first = False
     return(pde)
     
+def print_pde_table(w, rhs_description, ut = 'u_t',n=3):
+    pde = ut + ' = '
+    first = True
+    #pdb.set_trace()
+    for i in range(len(w)):
+        if w[i] != 0:
+            if not first:
+                pde = pde + ' + '        
+            pde = pde + "%05f" % (w[i].real) + rhs_description[i]
+            first = False
+    if pde == ut + ' = ':
+        pde = pde + "0"
+    return(pde)
+
     
 #functions added by JTN
 
@@ -696,3 +710,24 @@ def xi_convert_full(xi,desc,desc_full):
         
     return xi_full
 
+#go from decimal number to its binary N-dimensiona vector of 0's and 1's
+def trans(x,N):
+    y=np.copy(x)
+    if y == 0: return[0]
+    bit = []
+    for i in np.arange(N):
+        bit.append(y % 2)
+        y >>= 1
+    return np.atleast_2d(np.asarray(bit[::-1]))
+
+#go from N-dimnsional vector of 0's and 1's to corresponding decimal number
+def trans_rev(x):
+    n = len(x)-1
+    dec = 0
+    for i in np.arange(n+1):
+        dec = dec + x[i]*2**(n-i)
+    return dec
+
+#find most common entry from list
+def most_common(lst):
+    return max(lst, key=lst.count)
