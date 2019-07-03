@@ -18,13 +18,15 @@ In order to make animations or compute RMSE tables, see
 
 # demo options
 train_ann     = 0 # train surface fitting ANN?
-make_ann_data = 1 # make ANN predictions?
-make_fd_data  = 1 # make fin. diff. predictions?
-make_sp_data  = 1 # make spline predictions?
-make_bsp_data = 1 # make bispline predictions?
+make_ann_data = 0 # make ANN predictions?
+make_fd_data  = 0 # make fin. diff. predictions?
+make_sp_data  = 0 # make spline predictions?
+make_bsp_data = 0 # make bispline predictions?
+make_NCV_bsp_data = 0 # make local NCV bispline predictions?
+make_global_bsp_data = 1 # make gloval NCV bispline predictions?
 
 # pick datasets
-datasets = ['advection_diffusion','fisher','fisher_nonlin'] 
+datasets = ['advection_diffusion']#['advection_diffusion','fisher','fisher_nonlin'] 
 inds = ['00','01','05','10','25','50']
 
 # pick ANN model name
@@ -74,3 +76,11 @@ for dataset in datasets:
         if make_bsp_data == 1:
             
             predict_bisplines(data_name, None)
+
+        if make_NCV_bsp_data == 1:
+
+            predict_NCV_bisplines(data_name,None)
+
+        if make_global_bsp_data == 1:
+            
+            predict_global_bisplines(data_name, None)

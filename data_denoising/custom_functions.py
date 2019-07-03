@@ -51,6 +51,7 @@ def gls_thresh_loss(y_true, y_pred):
     
     # proportionality constant
     gamma = 1.0
+    #gamma = 0.5
     
     # threshold cutoff
     threshold = 0.0001
@@ -62,6 +63,19 @@ def gls_thresh_loss(y_true, y_pred):
     
     # mean square proportional error, (y_pred - y_true)/(|y_pred|^gamma)
     mspe = K.mean(tf.square((y_pred - y_true)/(y_prop**gamma)), axis=-1) 
+    
+    # mean square loss penalty for values not in [0, 1]
+    penalty = K.mean(tf.square(tf.cast(y_pred > 1.0, y_pred.dtype)*y_pred_abs + \
+                               tf.cast(y_pred < 0.0, y_pred.dtype)*(y_pred_abs + 1.0)))
+    
+    return mspe + penalty
+
+def ols_thresh_loss(y_true, y_pred):
+    
+    y_pred_abs = tf.abs(y_pred)
+
+    # mean square proportional error, (y_pred - y_true)/(|y_pred|^gamma)
+    mspe = K.mean(tf.square(y_pred - y_true), axis=-1) 
     
     # mean square loss penalty for values not in [0, 1]
     penalty = K.mean(tf.square(tf.cast(y_pred > 1.0, y_pred.dtype)*y_pred_abs + \

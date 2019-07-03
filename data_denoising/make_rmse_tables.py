@@ -1,10 +1,10 @@
 import numpy as np
 import surface_fitter
 
-data_names = ['advection_diffusion','fisher','fisher_nonlin']
-inds = ['00','01','05','10','25','50']
-model_names = ['finite_differences','bisplines','nn']
-print_names = ['FD','SP','ANN']
+data_names = ['advection_diffusion','advection_diffusion']#,'fisher','fisher_nonlin']
+inds = ['$\sigma = 00$','$\sigma = 01$','$\sigma = 05$','$\sigma = 10$','$\sigma = 25$','$\sigma = 50$']
+model_names = ['finite_differences','bisplines','NCV_bisplines','global_NCV_bisplines_3','nn']
+print_names = ['FD','LCVSP','LNCVSP','GNCVSP','ANN']
 skip = 20
 threshold = 0.0001
 
@@ -12,18 +12,18 @@ for data_name in data_names:
     
     print '\\verb+' + data_name + '+'
     print '\\begin{tabular}{cccccc}'
-    print '    Error & Method & $U$ RMSE & $U_{t}$ RMSE & $U_{x}$ RMSE & $U_{xx}$ RMSE \\\\ '
+    print '    Error & Method & $u$ RMSE & $u_{t}$ RMSE & $u_{x}$ RMSE & $u_{xx}$ RMSE \\\\ '
     print '    \\hline'
 
     for ind in inds:
         
         for model_name in model_names:
             
-            dataset = data_name+'_'+ind+'_'+model_name
+            dataset = data_name+'_'+ind[-3:-1]+'_'+model_name
 
             reload(surface_fitter)
             from surface_fitter import SurfNN
-            nn = SurfNN(data_name+'_'+ind, None)
+            nn = SurfNN(data_name+'_'+ind[-3:-1], None)
             x_flat, y_flat, U_min, U_max, U_shape = nn.load_data()
 
             # rank-1 arrays

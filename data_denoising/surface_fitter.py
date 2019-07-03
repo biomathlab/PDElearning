@@ -11,9 +11,10 @@ from keras.models import Model
 from keras.optimizers import Adam
 from keras import regularizers
 import keras.backend as K
-
+import pdb
 # import custom activations and loss functions
 from custom_functions import *
+
 
 class SurfNN():
     
@@ -322,7 +323,7 @@ class SurfNN():
         ax.plot_surface(X.T, T.T, U_pred.T, color='r', alpha=0.4)
         ax.scatter(X[::x_steps,::t_steps].reshape(-1), 
                    T[::x_steps,::t_steps].reshape(-1), 
-                   U_true[::x_steps,::1].reshape(-1), c='k', s=1)
+                   U_true[::x_steps,::t_steps].reshape(-1), c='k', s=1)
         ax.set_zlim(0,1)
         plt.title('Learned Surface, Epoch = '+str(epoch+1))
         plt.xlabel('x')
