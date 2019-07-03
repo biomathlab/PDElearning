@@ -1,0 +1,6 @@
+Global NCV splines completed for advection_diffusion_50at 
+2019-06-19T10:26:53
+Optimal s occured at s =4000.0from choice of 
+[8000, 4000.0, 2000.0] 
+With GLS errors 
+[17186080648533.162, 126.21149284226455, 243.81304524285028] 
